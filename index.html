@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入頁面</title>
+    <link rel="stylesheet" href="default.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: serif;
+        }
+        
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 120px;
+        }
+
+        .logIn_content {
+            width: 350px;
+            margin: 40px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mainContainer">
+
+        <h1>使用者登入首頁</h1>
+
+        <div class="logIn_content">
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                    value="teacher">
+                <label class="form-check-label" for="inlineRadio1">老師</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="parent">
+                <label class="form-check-label" for="inlineRadio2">家長</label>
+            </div>
+
+            <br>
+
+            <div class="input-group input-group-lg mb-1">
+                <span class="input-group-text" id="username">帳號</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="username">
+            </div>
+            <div class="input-group input-group-lg mb-2">
+                <span class="input-group-text" id="pwd">密碼</span>
+                <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="pwd">
+            </div>
+
+            <button class="btn btn-success" id="getValueBtn">登入</button>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#getValueBtn').click(function () {
+                let selectedVal = $("input[name='inlineRadioOptions']:checked").val();
+                console.log("選中的值:", selectedVal);
+
+                if (selectedVal == "teacher") {
+                    window.location.href = "teacher_caseListPage.html";
+                } else if (selectedVal == "parent") {
+                    window.location.href = "parent_videoListPage.html";
+                } else {
+                    alert("請選擇身分類別！");
+                }
+            })
+        });
+    </script>
+
+</body>
+
+</html>

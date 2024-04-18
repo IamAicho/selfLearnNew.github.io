@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學習聽聲辨位操作頁面_老師版</title>
+    <link rel="stylesheet" href="default.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- icon 圖的 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            font-family: serif;
+        }
+
+
+        
+        p {
+            margin: 0;
+        }
+
+        .iconBtn i {
+            color: #3b7c78;
+            font-size: 36px;
+            cursor: pointer;
+        }
+
+        .videoControlArea {
+            float: left;
+            width: 430px;
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+
+        .videoControlArea hr {
+            margin: 15px 10px;
+            border-top: 2px dashed;
+        }
+
+        .swichBlock {
+            background: #fff;
+            color: #02457a;
+
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            border-radius: 30px;
+            /* width: 145px; */
+        }
+
+
+
+
+
+        .controlVideoArea {
+            color: #3b7c78;
+            text-align: center;
+        }
+
+        .controlVideoVol {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .controlVideoVol i {
+            font-size: 40px;
+        }
+
+        .vol {
+            color: #000;
+            padding: 0 5px;
+        }
+
+        .playVideoBtn i {
+            font-size: 40px;
+        }
+
+        .controlVideoDirectionBtn {
+            display: inline-block;
+            text-align: center;
+            margin-left: 50px;
+            margin-bottom: 15px;
+        }
+
+        .controlVideoDirectionBtn i {
+            font-size: 36px;
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 4px 1px;
+        }
+
+
+
+
+
+        .evaluateArea {
+            float: right;
+            margin-top: 40px;
+            margin-right: 20px;
+        }
+
+        .content {
+            background-color: #fff;
+            height: 480px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .content table {
+            width: 600px;
+        }
+
+        .content th {
+            border: 1px solid #222;
+            padding: 5px 15px;
+            text-align: center;
+            font-weight: bold;
+
+        }
+
+        .list-title {
+            text-align: center;
+        }
+
+        .evaluateArea button {
+            margin-top: 10px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mainContainer">
+
+        <div class="videoControlArea">
+
+            <span class="iconBtn">
+                <i class="fa-solid fa-rotate-left" onclick="history.back()"></i>
+            </span>
+
+            <div class="userContent">
+                <p>使用者：TC老師</p>
+                <p>個案姓名：A兒童</p>
+            </div>
+
+            <hr>
+
+            <div class="swichBlock">
+                <span>
+                    <i class="fa-brands fa-bluetooth"></i>
+                    藍芽喇叭
+                </span>
+                <label class="switch">
+                    <input type="checkbox" id="scanAudio">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="swichBlock">
+                <span>
+                    <i class="fa-solid fa-tv"></i>
+                    投影機
+                </span>
+                <label class="switch">
+                    <input type="checkbox" id="projecOpen">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <hr>
+
+            <div class="uploadVideoArea">
+                <label for="videoInput">上傳學習影檔：</label>
+                <input type="file" accept="video/*" name="videoInput" id="videoInput" multiple="true">
+            </div>
+
+            <div class="controlVideoArea">
+
+                <span class="playVideoBtn">
+                    <i class="fa-solid fa-play"></i>
+                </span>
+
+                <div class="controlVideoDirectionBtn">
+                    <i class="fa-solid fa-arrow-up" id="upSpeaker"></i><br>
+                    <i class="fa-solid fa-arrow-left" id="leftSpeaker"></i>
+                    <i class="fa-solid fa-arrow-down" id="downSpeaker"></i>
+                    <i class="fa-solid fa-arrow-right" id="rightSpeaker"></i>
+                </div>
+
+                <br>
+
+                <span class="controlVideoVol">
+                    <span>
+                        <i class="fa-solid fa-volume-low"></i>
+                    </span>
+                    <span class="vol" id="vol">(音量)</span>
+                    <span>
+                        <i class="fa-solid fa-volume-high"></i>
+                    </span>
+                </span>
+
+            </div>
+
+            <hr>
+
+            <a class="btn btn-outline-danger" href="index.html">登出</a>
+
+        </div>
+
+        <div class="evaluateArea">
+
+            <p>孩童反應評估紀錄：</p>
+
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr class="list-title">
+                            <th class="list-NO">順序</th>
+                            <th>頻率</th>
+                            <th>方向</th>
+                            <th>音量</th>
+                            <th>評估</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <button class="btn btn-success">儲存</button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="https://kit.fontawesome.com/66d48061b3.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

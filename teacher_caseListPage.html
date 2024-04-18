@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老師的個案清單列表頁面</title>
+    <link rel="stylesheet" href="default.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: serif;
+        }
+
+
+        
+        .accountContent {
+            float: left;
+            width: 350px;
+            text-align: center;
+            margin: 68px auto;
+        }
+
+        .accountContent img {
+            width: 180px;
+            border-radius: 90px;
+            margin-bottom: 30px;
+        }
+
+
+
+        .caseListContent {
+            float: left;
+            width: 680px;
+            text-align: center;
+            margin: 68px auto;
+        }
+
+        .caseList {
+            height: 355px;
+            border-radius: 5px;
+            overflow-y: auto;
+        }
+
+        .table {
+            margin: 0;
+        }
+
+        .caseListContent button {
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="mainContainer">
+
+        <div class="teacher_mainContent">
+
+            <div class="accountContent">
+                <img src="image/CHFlogo.jpg" alt="I'm a photo.">
+                <p>姓名：A老師</p>
+                <p>帳號：TC001</p>
+                <p>個案數量：<span id="sumOfCase"></span>名</p>
+
+                <br><br><br>
+                <a class="btn btn-outline-danger" href="index.html">登出</a>
+
+            </div>
+
+            <div class="caseListContent">
+
+                <div class="input-group flex-nowrap input-group-lg mb-4">
+                    <span class="input-group-text" id="addon-wrapping">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="搜尋個案姓名" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+
+                <div class="caseList">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">個案姓名</th>
+                                <th scope="col">個案家長</th>
+                                <th scope="col">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>A兒童</td>
+                                <td>A家長</td>
+                                <td>
+                                    <a href="teacher_learningPage.html">學習介面</a>
+                                    <a href="teacher_historyPage.html">歷史資料</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>B兒童</td>
+                                <td>B家長</td>
+                                <td>
+                                    <a href="#">學習介面</a>
+                                    <a href="#">歷史資料</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>C兒童</td>
+                                <td>C家長</td>
+                                <td>
+                                    <a href="#">學習介面</a>
+                                    <a href="#">歷史資料</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>D兒童</td>
+                                <td>D家長</td>
+                                <td>
+                                    <a href="#">學習介面</a>
+                                    <a href="#">歷史資料</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>E兒童</td>
+                                <td>E家長</td>
+                                <td>
+                                    <a href="#">學習介面</a>
+                                    <a href="#">歷史資料</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>F兒童</td>
+                                <td>F家長</td>
+                                <td>
+                                    <a href="#">學習介面</a>
+                                    <a href="#">歷史資料</a>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <button class="btn btn-light">編輯個案名單</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        let numberOfTrs = $('table tbody tr').length;
+        console.log(numberOfTrs);
+        $("#sumOfCase").text(numberOfTrs);
+    </script>
+</body>
+
+</html>
